@@ -16,7 +16,7 @@ def cargar_dataset():
         ruta_proyecto = "C:\\Users\\Usuario\\Documents\\GitHub\\repo_TA\\"
         os.chdir(ruta_proyecto)
         
-        df = pd.read_csv('src\\data\\customer_data.csv')
+        df = pd.read_csv('data\\customer_data.csv')
         
         return df
     
@@ -77,3 +77,5 @@ def validar_dataset(df):
         print(f'Se eliminaron {filas_eliminadas} filas con datos faltantes')
     
     return df
+
+

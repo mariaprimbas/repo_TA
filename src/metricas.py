@@ -1,3 +1,4 @@
+import pandas as pd
 def obtener_estadisticas_generales(df):
   '''
     Calcula estadísticas generales del dataset de clientes.

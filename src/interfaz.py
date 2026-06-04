@@ -32,3 +32,39 @@ def pedir_opcion():
         except ValueError:
             print("Error: debe ingresar un número entero.")
             continue
+
+
+
+
+def pedir_id_cliente(df):
+    '''
+    funcion que pide un id de cliente y lo valida
+
+    Parameters
+    ----------
+    df : DataFrame
+        DataFrame con los datos del dataset ya validados.
+
+    Returns
+    -------
+    id_cliente : int
+        el id del cliente pedido ya validado.
+
+    '''
+
+    while True:
+
+        try:
+
+            id_cliente = int(input("Ingrese ID del cliente: "))
+
+            if id_cliente in df["id"].values:
+                return id_cliente
+
+            print("Error: no existe un cliente con ese ID")
+
+        except ValueError:
+
+            print("Error: debe ingresar un número")
+
+      

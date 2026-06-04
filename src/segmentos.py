@@ -21,20 +21,13 @@ def segmentos(df):
     print("2. Compra promedio según fidelización")
     print("3. Satisfacción promedio según fidelización")
     print("4. Compra promedio según uso de promociones")
+    
+    while True: 
+        opcion = input("\nIngrese una opción: ").lower().strip()
+        if opcion not in [1, 2, 3, 4]:
+            raise ValueError("Opción de comparación inválida.")
 
-    opcion = input("\nIngrese una opción: ").lower().strip()
-
-    opciones_validas = [
-        "region",
-        "fidelizacion_compra",
-        "fidelizacion_satisfaccion",
-        "promociones"
-    ]
-
-    if opcion not in opciones_validas:
-        raise ValueError("Opción de comparación inválida.")
-
-    if opcion == "region":
+    if opcion == 1:
 
         analisis = df.groupby("region").agg(
 
@@ -49,7 +42,7 @@ def segmentos(df):
             ascending=False
         )
 
-    elif opcion == "fidelizacion_compra":
+    elif opcion == 2:
 
         analisis = df.groupby("loyalty_status").agg(
 
@@ -64,7 +57,7 @@ def segmentos(df):
             ascending=False
         )
 
-    elif opcion == "fidelizacion_satisfaccion":
+    elif opcion == 3:
 
         analisis = df.groupby("loyalty_status").agg(
 
@@ -79,7 +72,7 @@ def segmentos(df):
             ascending=False
         )
 
-    elif opcion == "promociones":
+    elif opcion == 4:
 
         analisis = df.groupby("promotion_usage").agg(
 

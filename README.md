@@ -37,16 +37,13 @@ pip install -r requirements.txt
 El archivo *requirements.txt* contiene las siguientes librerías:
 
 
-
-```text
-
 pandas
 
 matplotlib
 
 google-genai
 
-```
+rich
 
 
 
@@ -58,7 +55,7 @@ google-genai
 
 
 
-Antes de ejecutar el programa, modificar la variable `ruta\_proyecto` dentro de la función `cargar\_dataset()` ubicada en `src/datos.py`.
+Antes de ejecutar el programa, modificar la variable 'ruta_proyecto' dentro de la función 'cargar_dataset()' ubicada en 'src/datos.py'.
 
 
 
@@ -98,8 +95,6 @@ API\_KEY = "PEGAR\_ACA\_LA\_API\_KEY"
 
 
 
-```text
-
 repo\_TA/
 
 │
@@ -120,21 +115,17 @@ repo\_TA/
 
 └── src/
 
-&#x20;   ├── datos.py
+	 ├── datos.py
 
-&#x20;   ├── interfaz.py
+	 ├── interfaz.py
 
-&#x20;   ├── perfiles.py
+	 ├── perfiles.py
 
-&#x20;   ├── metricas.py
+	 ├── metricas.py
 
-&#x20;   ├── comparaciones.py
+	 ├── comparaciones.py
 
-&#x20;   ├── graficos.py
+	 ├── graficos.py
 
-&#x20;   └── recomendaciones.py
-
-```
-
-#### 
+	 └── recomendaciones.py
 

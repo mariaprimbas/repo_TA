@@ -56,7 +56,7 @@ class Cliente:
         self.limite_premium = 85
         self.limite_frecuente = 55
 
-    def obtener_score(self, cliente):
+    def obtener_score(self):
         '''
         Calcula el score del cliente a partir de su frecuencia de compra,monto gastado y nivel de satisfacción
 
@@ -67,26 +67,26 @@ class Cliente:
 
         '''
         score = 0
-        if cliente.purchase_frequency == "frequent":
+        if self.purchase_frequency == "frequent":
             score += 50
-        elif cliente.purchase_frequency == "occasional":
+        elif self.purchase_frequency == "occasional":
             score += 30
         else:  # rare
             score += 10
 
-        if cliente.purchase_amount >= 15000:
+        if self.purchase_amount >= 15000:
             score += 30
-        elif cliente.purchase_amount >= 8000:
+        elif self.purchase_amount >= 8000:
             score += 20
         else:
             score += 10
 
-        score += cliente.satisfaction_score * 2
+        score += self.satisfaction_score * 2
 
         return score
 
 #Clasifica al cliente segun su score 
-    def clasificar(self, cliente):
+    def clasificar_perfil(self, cliente):
         '''
         Determina la categoría del cliente según su score.
 
@@ -98,7 +98,7 @@ class Cliente:
 
         '''
 
-        score = self.obtener_score(cliente)
+        score = self.obtener_score
 
         if score >= self.limite_premium:
             return "Premium"
@@ -109,7 +109,7 @@ class Cliente:
         else:
             return "Ocasional"
 
-    def generar_recomendacion(self, cliente):
+    def generar_recomendacion(self):
         '''
         Genera una recomendación comercial basada en la categoría del cliente.
 
@@ -120,7 +120,7 @@ class Cliente:
             Recomendación correspondiente al perfil del cliente.
         '''
 
-        categoria = self.clasificar(cliente)
+        categoria = self.clasificar_perfil()
 
         if categoria == "Premium":
             return "Ofrecer beneficios VIP y descuentos exclusivos"
@@ -130,3 +130,6 @@ class Cliente:
 
         else:
             return "Aplicar campaña de fidelización"
+
+    def mostrar_resultado(self):
+        print(f"El cliente self.id pertenece a la categoria self.clasificar_perfil(). Recomendacion para el cliente: self.generar_recomendacion()")

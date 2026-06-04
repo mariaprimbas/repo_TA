@@ -132,32 +132,32 @@ class Cliente:
             return "Aplicar campaña de fidelización"
 
     def mostrar_resultado(self):
-        print(f"El cliente {self.id} pertenece a la categoria {self.clasificar_perfil()}. Recomendacion para el cliente: {self.generar_recomendacion()}")
+        return(f"El cliente {self.id} pertenece a la categoria {self.clasificar_perfil()}. Recomendacion para el cliente: {self.generar_recomendacion()}")
     
-    def crear_cliente_id(df, id_cliente):
-        '''
-        Crea un objeto Cliente a partir de un ID buscado en un DataFrame.
+def crear_cliente_id(df, id_cliente):
+    '''
+    Crea un objeto Cliente a partir de un ID buscado en un DataFrame.
 
-        Parametros
-        ----------
-        df : DataFrame 
-            Un DataFrame con los datos de clientes.
-        id_cliente : int
-            ID del cliente a buscar.
+    Parametros
+    ----------
+    df : DataFrame 
+        Un DataFrame con los datos de clientes.
+    id_cliente : int
+        ID del cliente a buscar.
 
-        Returns
-        -------
-        cliente: Cliente
-            Objeto cliente corresponditene al ID.
+    Returns
+    -------
+    cliente: Cliente
+        Objeto cliente corresponditene al ID.
 
-        '''      
-        fila = df[df["id"] == id_cliente]
-        
-        cliente = Cliente(
-            fila["id"].iloc[0],
-            fila["age"].iloc[0],
-            fila["income"].iloc[0],
-            fila["purchase_frequency"].iloc[0],
-            fila["purchase_amount"].iloc[0],
-            fila["satisfaction_score"].iloc[0])
-        return cliente
+    '''      
+    fila = df[df["id"] == id_cliente]
+    
+    cliente = Cliente(
+        fila["id"].iloc[0],
+        fila["age"].iloc[0],
+        fila["income"].iloc[0],
+        fila["purchase_frequency"].iloc[0],
+        fila["purchase_amount"].iloc[0],
+        fila["satisfaction_score"].iloc[0])
+    return cliente

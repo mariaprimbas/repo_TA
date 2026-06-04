@@ -27,7 +27,7 @@ while True:
         cliente= crear_cliente_id(df_valido, id_cliente)
 
         print("\nPerfil del cliente:")
-        print(cliente.clasificar_perfil())
+        print(cliente.mostrar_resultado())
 
     elif opcion == 2:
 

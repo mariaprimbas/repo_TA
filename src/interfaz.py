@@ -1,6 +1,6 @@
 def mostrar_menu():
   '''
-    Función que muestra el menu de opciones al usuario
+    Función que muestra el menu de opciones disponibles al usuario
     Parameters
     None
     Returns

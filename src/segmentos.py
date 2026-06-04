@@ -1,4 +1,4 @@
-def comparar_clientes(df):
+def segmentos(df):
     '''
     Compara grupos de clientes según el criterio seleccionado.
 

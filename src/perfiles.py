@@ -132,4 +132,4 @@ class Cliente:
             return "Aplicar campaña de fidelización"
 
     def mostrar_resultado(self):
-        print(f"El cliente self.id pertenece a la categoria self.clasificar_perfil(). Recomendacion para el cliente: self.generar_recomendacion()")
+        print(f"El cliente {self.id} pertenece a la categoria {self.clasificar_perfil()}. Recomendacion para el cliente: {self.generar_recomendacion()}")

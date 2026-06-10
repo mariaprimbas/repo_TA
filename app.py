@@ -10,7 +10,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("📊 PulseLab Analytics")
+st.title("📊 Sistema de Análisis y Perfilado de Clientes")
 
 # -------------------
 # CARGA DATOS

@@ -5,6 +5,7 @@ from src.perfiles import crear_cliente_id
 from src.metricas import obtener_estadisticas_generales
 from src.graficos import mostrar_menu_graficos
 from src.segmentos import segmentos
+from src.recomendaciones_api import generar_recomendacion_api
 #from tabulate import tabulate
 
 try:
@@ -67,6 +68,8 @@ while True:
         cliente= crear_cliente_id(df_valido, id_cliente)
 
         print("Generando recomendaciones...")
+        reco = generar_recomendacion_api(cliente)
+        print(reco)
 
     elif opcion == 6:
 

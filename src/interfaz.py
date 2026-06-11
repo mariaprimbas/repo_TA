@@ -11,7 +11,7 @@ def mostrar_menu():
 def pedir_opcion():
     '''
     Función que solicita al usuario una opción del menú y valida
-    que sea un número entero entre 1 y 6.
+    que sea un número entero entre 1 y 7.
 
     Returns
     -------
@@ -22,9 +22,9 @@ def pedir_opcion():
     while True:
 
         try:
-            opcion = int(input("Seleccione una opción (1-6): "))
+            opcion = int(input("Seleccione una opción (1-7): "))
             if opcion < 1 or opcion > 6:
-              print("Error: debe ingresar una opción entre 1 y 6.")
+              print("Error: debe ingresar una opción entre 1 y 7.")
               continue
 
             return opcion

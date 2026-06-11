@@ -86,6 +86,7 @@ while True:
         print(reco)
     elif opcion==6:
         link= "http://localhost:8501"
+        print("Link para ingresar a la interfaz: " )
         print(link)
     
     elif opcion == 7:

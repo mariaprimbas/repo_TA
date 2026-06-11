@@ -84,12 +84,10 @@ while True:
         print("Generando recomendaciones...")
         reco = generar_recomendacion_api(cliente)
         print(reco)
-    elif opcion== 6:
-        ##agregar cliente
-    elif opcion==7:
+    elif opcion==6:
         ##ver interfaz
     
-    elif opcion == 8:
+    elif opcion == 7:
 
         print("Programa finalizado.")
         break

@@ -8,6 +8,7 @@ from src.segmentos import segmentos
 from src.recomendaciones_api import generar_recomendacion_api
 from rich.console import Console
 from rich.table import Table
+from src.mapa import generar_mapa_regiones
 import webbrowser
 #from tabulate import tabulate
 
@@ -85,14 +86,15 @@ while True:
         print("Generando recomendaciones...")
         reco = generar_recomendacion_api(cliente)
         print(reco)
-    
+        
     elif opcion==6:
         link= webbrowser.open("http://localhost:8501")
         print("\nLink para ingresar a la interfaz: \n ")
         
-    
     elif opcion == 7:
+        generar_mapa_regiones(df_valido)
         
+    elif opcion == 8:   
         print("Programa finalizado.")
         break
     

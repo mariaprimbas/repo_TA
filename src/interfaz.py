@@ -23,7 +23,7 @@ def pedir_opcion():
 
         try:
             opcion = int(input("Seleccione una opción (1-7): "))
-            if opcion < 1 or opcion > 6:
+            if opcion < 1 or opcion > 7:
               print("Error: debe ingresar una opción entre 1 y 7.")
               continue
 

@@ -85,6 +85,7 @@ while True:
         print("Generando recomendaciones...")
         reco = generar_recomendacion_api(cliente)
         print(reco)
+    
     elif opcion==6:
         link= webbrowser.open("http://localhost:8501")
         print("\nLink para ingresar a la interfaz: \n ")

@@ -3,7 +3,7 @@ import pandas as pd
 
 def cargar_dataset():
     '''
-    funcion que carga el dataset y lo convierte en un DataFrame
+    Funcion que carga el dataset y lo convierte en un DataFrame
 
     Returns
     -------

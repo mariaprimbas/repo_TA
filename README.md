@@ -16,7 +16,7 @@ Integrantes:
 
 
 
-#### Descripción 
+#### Descripción
 
 
 
@@ -64,17 +64,16 @@ El archivo *requirements.txt* contiene las siguientes librerías:
 
 
 
-pandas
+* pandas
+* matplotlib
+* seaborn
+* folium
+* google-genai
+* rich
+* webbrowser
+* streamlit
 
-matplotlib
 
-seaborn
-
-folium
-
-google-genai
-
-rich
 
 
 

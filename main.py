@@ -75,7 +75,7 @@ while True:
         print(reco)
         
     elif opcion==6:
-        link= webbrowser.open("http://localhost:8501")
+        link= webbrowser.open("https://customer-segmentation-ta.streamlit.app/")
         print("\nLink para ingresar a la interfaz: \n ")
         
     elif opcion == 7:

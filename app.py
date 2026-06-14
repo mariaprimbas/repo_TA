@@ -1,39 +1,45 @@
 import streamlit as st
 import pandas as pd
-
 import matplotlib.pyplot as plt
-import seaborn as sns
 
-from src.datos import cargar_dataset, validar_dataset
 from src.metricas import obtener_estadisticas_generales
-from src.perfiles import crear_cliente_id, Cliente
+from src.perfiles import crear_cliente_id
+
+from src.graficos import (
+    grafico_ingreso_vs_compra,
+    grafico_distribucion_perfiles
+)
+
+# -------------------------
+# CONFIGURACIÓN
+# -------------------------
 
 st.set_page_config(
-    page_title="PulseLab Analytics",
+    page_title="Sistema de Clientes",
     layout="wide"
 )
 
 st.title("📊 Sistema de Análisis y Perfilado de Clientes")
 
-# -------------------
-# CARGA DATOS
-# -------------------
+# -------------------------
+# CARGA DE DATOS
+# -------------------------
 
 try:
-    df = cargar_dataset()
-    df = validar_dataset(df)
+    df = pd.read_csv("data/customer_data.csv")
 
 except Exception as e:
-    st.error(str(e))
+    st.error(f"Error cargando dataset: {e}")
     st.stop()
 
-# -------------------
-# MENU
-# -------------------
+# -------------------------
+# MENÚ LATERAL
+# -------------------------
 
 opcion = st.sidebar.selectbox(
-    "Seleccione una opción",
+    "Menú",
     [
+        "Inicio",
         "Perfil de cliente",
         "Estadísticas generales",
         "Comparar segmentos",
@@ -41,11 +47,25 @@ opcion = st.sidebar.selectbox(
     ]
 )
 
-# -------------------
-# PERFIL
-# -------------------
+# -------------------------
+# INICIO
+# -------------------------
 
-if opcion == "Perfil de cliente":
+if opcion == "Inicio":
+
+    st.subheader("Bienvenido 👋")
+
+    st.write(
+        "Sistema de análisis de clientes con visualizaciones interactivas."
+    )
+
+    st.dataframe(df)
+
+# -------------------------
+# PERFIL DE CLIENTE
+# -------------------------
+
+elif opcion == "Perfil de cliente":
 
     st.header("Perfil de Cliente")
 
@@ -61,17 +81,17 @@ if opcion == "Perfil de cliente":
     st.write("### Datos del cliente")
 
     st.write({
-    "ID": int(cliente.id),
-    "Edad": int(cliente.age),
-    "Ingreso": int(cliente.income),
-    "Frecuencia": cliente.purchase_frequency,
-    "Monto compra": int(cliente.purchase_amount),
-    "Satisfacción": int(cliente.satisfaction_score)
-})
+        "ID": int(cliente.id),
+        "Edad": int(cliente.age),
+        "Ingreso": int(cliente.income),
+        "Frecuencia": cliente.purchase_frequency,
+        "Monto compra": int(cliente.purchase_amount),
+        "Satisfacción": int(cliente.satisfaction_score)
+    })
 
-# -------------------
-# ESTADISTICAS
-# -------------------
+# -------------------------
+# ESTADÍSTICAS GENERALES
+# -------------------------
 
 elif opcion == "Estadísticas generales":
 
@@ -81,9 +101,9 @@ elif opcion == "Estadísticas generales":
 
     st.dataframe(metricas)
 
-# -------------------
-# SEGMENTOS
-# -------------------
+# -------------------------
+# COMPARACIÓN DE SEGMENTOS
+# -------------------------
 
 elif opcion == "Comparar segmentos":
 
@@ -104,8 +124,8 @@ elif opcion == "Comparar segmentos":
         analisis = (
             df.groupby("region")
             .agg(
-                compra_promedio=("purchase_amount","mean"),
-                cantidad_clientes=("id","count")
+                compra_promedio=("purchase_amount", "mean"),
+                cantidad_clientes=("id", "count")
             )
             .sort_values("compra_promedio", ascending=False)
         )
@@ -115,8 +135,8 @@ elif opcion == "Comparar segmentos":
         analisis = (
             df.groupby("loyalty_status")
             .agg(
-                compra_promedio=("purchase_amount","mean"),
-                cantidad_clientes=("id","count")
+                compra_promedio=("purchase_amount", "mean"),
+                cantidad_clientes=("id", "count")
             )
             .sort_values("compra_promedio", ascending=False)
         )
@@ -126,8 +146,8 @@ elif opcion == "Comparar segmentos":
         analisis = (
             df.groupby("loyalty_status")
             .agg(
-                satisfaccion_promedio=("satisfaction_score","mean"),
-                cantidad_clientes=("id","count")
+                satisfaccion_promedio=("satisfaction_score", "mean"),
+                cantidad_clientes=("id", "count")
             )
             .sort_values("satisfaccion_promedio", ascending=False)
         )
@@ -137,76 +157,40 @@ elif opcion == "Comparar segmentos":
         analisis = (
             df.groupby("promotion_usage")
             .agg(
-                compra_promedio=("purchase_amount","mean"),
-                cantidad_clientes=("id","count")
+                compra_promedio=("purchase_amount", "mean"),
+                cantidad_clientes=("id", "count")
             )
             .sort_values("compra_promedio", ascending=False)
         )
 
     st.dataframe(analisis)
 
-    st.bar_chart(analisis.iloc[:,0])
+    st.bar_chart(analisis.iloc[:, 0])
 
-# -------------------
-# GRAFICOS
-# -------------------
-
+# -------------------------
+# GRÁFICOS
+# -------------------------
 
 elif opcion == "Gráficos":
 
-    st.header("Visualizaciones")
+    st.header("📈 Visualizaciones")
 
     grafico = st.selectbox(
-        "Seleccione gráfico",
+        "Seleccione un gráfico",
         [
-            "Compra promedio por fidelización",
-            "Distribución de clientes por región"
+            "Ingreso vs Compra",
+            "Distribución de Perfiles"
         ]
     )
 
-    if grafico == "Compra promedio por fidelización":
+    if grafico == "Ingreso vs Compra":
 
-        fig, ax = plt.subplots(figsize=(8,5))
+        grafico_ingreso_vs_compra(df)
 
-        datos = df.groupby("loyalty_status")["purchase_amount"].mean().reset_index()
+        st.pyplot(plt.gcf())
 
-        sns.barplot(
-            data=datos,
-            x="loyalty_status",
-            y="purchase_amount",
-            palette="viridis",
-            ax=ax
-        )
+    elif grafico == "Distribución de Perfiles":
 
-        ax.set_title("Compra promedio por fidelización")
-        ax.set_xlabel("Fidelización")
-        ax.set_ylabel("Compra promedio")
+        grafico_distribucion_perfiles(df)
 
-        ax.grid(axis="y", linestyle="--", alpha=0.3)
-
-        st.pyplot(fig)
-
-    else:
-
-        fig, ax = plt.subplots(figsize=(8,5))
-
-        datos = df["region"].value_counts().reset_index()
-        datos.columns = ["region", "count"]
-
-        sns.barplot(
-            data=datos,
-            x="region",
-            y="count",
-            palette="magma",
-            ax=ax
-        )
-
-        ax.set_title("Distribución de clientes por región")
-        ax.set_xlabel("Región")
-        ax.set_ylabel("Cantidad")
-
-        ax.tick_params(axis='x', rotation=30)
-
-        ax.grid(axis="y", linestyle="--", alpha=0.3)
-
-        st.pyplot(fig)
+        st.pyplot(plt.gcf())

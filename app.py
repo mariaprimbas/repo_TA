@@ -1,6 +1,9 @@
 import streamlit as st
 import pandas as pd
 
+import matplotlib.pyplot as plt
+import seaborn as sns
+
 from src.datos import cargar_dataset, validar_dataset
 from src.metricas import obtener_estadisticas_generales
 from src.perfiles import crear_cliente_id, Cliente
@@ -148,6 +151,7 @@ elif opcion == "Comparar segmentos":
 # GRAFICOS
 # -------------------
 
+
 elif opcion == "Gráficos":
 
     st.header("Visualizaciones")
@@ -162,16 +166,47 @@ elif opcion == "Gráficos":
 
     if grafico == "Compra promedio por fidelización":
 
-        datos = (
-            df.groupby("loyalty_status")
-            ["purchase_amount"]
-            .mean()
+        fig, ax = plt.subplots(figsize=(8,5))
+
+        datos = df.groupby("loyalty_status")["purchase_amount"].mean().reset_index()
+
+        sns.barplot(
+            data=datos,
+            x="loyalty_status",
+            y="purchase_amount",
+            palette="viridis",
+            ax=ax
         )
 
-        st.bar_chart(datos)
+        ax.set_title("Compra promedio por fidelización")
+        ax.set_xlabel("Fidelización")
+        ax.set_ylabel("Compra promedio")
+
+        ax.grid(axis="y", linestyle="--", alpha=0.3)
+
+        st.pyplot(fig)
 
     else:
 
-        datos = df["region"].value_counts()
+        fig, ax = plt.subplots(figsize=(8,5))
 
-        st.bar_chart(datos)
+        datos = df["region"].value_counts().reset_index()
+        datos.columns = ["region", "count"]
+
+        sns.barplot(
+            data=datos,
+            x="region",
+            y="count",
+            palette="magma",
+            ax=ax
+        )
+
+        ax.set_title("Distribución de clientes por región")
+        ax.set_xlabel("Región")
+        ax.set_ylabel("Cantidad")
+
+        ax.tick_params(axis='x', rotation=30)
+
+        ax.grid(axis="y", linestyle="--", alpha=0.3)
+
+        st.pyplot(fig)

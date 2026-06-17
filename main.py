@@ -85,8 +85,14 @@ while True:
         print("Programa finalizado.")
         break
     
+    
     continuar = input("\n¿Desea realizar otra operación? (s/n): ").lower()
 
-    if continuar != "s":
+    while continuar != "n" and continuar != "s":
+        print('Debe ingresar s o n.')
+        continuar = input("\n¿Desea realizar otra operación? (s/n): ").lower()
+        
+    if continuar == "n":
         print("Programa finalizado.")
         break
+        

@@ -19,7 +19,7 @@ Integrantes:
 
 
 
-El proyecto consiste en un sistema de análisis y perfilado de clientes a partir de un dataset comportamiento de compra. El programa permitirá obtener estadísticas generales, comparar segmentos de clientes, visualizar información mediante gráficos, clasificar clientes según diferentes perfiles de consumo y la generación de recomendaciones de marketing a partir de una IA. 
+El proyecto consiste en un sistema de análisis y perfilado de clientes a partir de un dataset comportamiento de compra. La fuente del dataset utilizado es Kaggle.com. El programa permitirá obtener estadísticas generales, comparar segmentos de clientes, visualizar información mediante gráficos, clasificar clientes según diferentes perfiles de consumo y la generación de recomendaciones de marketing a partir de una IA. 
 
 El sistema está orientado a empresas, analistas de marketing, responsables comerciales o investigadores interesados en comprender el comportamiento de compra de sus clientes. . A partir de este análisis, el sistema clasifica a los clientes según su perfil y genera recomendaciones que ayudan a diseñar estrategias de marketing, campañas de fidelización y ventas más efectivas. 
 

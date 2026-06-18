@@ -28,6 +28,8 @@ Informacion detallada sobre el diseño del Trabajo Aplicado se encuentra en el d
 Los diagramas del diseño del trabajo se encuentran en la carpeta "diagramas". 
 
 
+
+
 #### Requisitos
 
 
@@ -42,6 +44,8 @@ pip install -r requirements.txt
 
 
 * En la línea 16 del archivo datos.py se encuentra la ubicación del archivo csv, si el programa se corre desde Windows se debe corroborar que esta escrita con \\, en cambio, en Mac debería tener /
+
+
 
 
 
@@ -65,6 +69,8 @@ API\_KEY = "PEGAR\_ACA\_LA\_API\_KEY"
 por la api key que se envía por mail con la entrega del trabajo
 
 
+
+
 #### Dependencias
 
 
@@ -81,6 +87,9 @@ El archivo *requirements.txt* contiene las siguientes librerías:
 * rich
 * webbrowser
 * streamlit
+
+
+
 
 
 

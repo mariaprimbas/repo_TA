@@ -81,3 +81,9 @@ El archivo *requirements.txt* contiene las siguientes librerías:
 * rich
 * webbrowser
 * streamlit
+
+
+
+### Declaración del uso de IA
+Durante el desarrollo de este proyecto se utilizaron herramientas de Inteligencia Artificial, específicamente ChatGPT y Gemini, como apoyo para la búsqueda de ideas, resolución de dudas y orientación en aspectos de diseño e implementación. Estas herramientas fueron implementadas para explorar alternativas de desarrollo, comprender conceptos y recibir sugerencias. Sin embargo, todas las decisiones de diseño, la implementación final del código y la integración final de las distintas partes fueron realizadas y evaluadas por los integrantes del grupo. Las respuestas generadas por las herramientas de IA fueron revisadas, adaptadas y validadas antes de ser incorporadas al proyecto.
+

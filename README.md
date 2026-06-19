@@ -93,6 +93,7 @@ El archivo *requirements.txt* contiene las siguientes librerías:
 * rich
 * webbrowser
 * streamlit
+* os
 
 
 

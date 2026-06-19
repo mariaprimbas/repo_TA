@@ -1,6 +1,7 @@
 import folium
 from folium.plugins import HeatMap
 import webbrowser
+import os
 
 def generar_mapa_regiones(df):
     '''
@@ -80,8 +81,8 @@ def generar_mapa_regiones(df):
     
     #Guardar el mapa
     mapa.save("outputs/mapa_clientes.html")
-    
-    webbrowser.open("mapa_clientes.html")
+    webbrowser.open(os.path.abspath("outputs/mapa_clientes.html"))
+
 
     print("Mapa generado correctamente.")
     

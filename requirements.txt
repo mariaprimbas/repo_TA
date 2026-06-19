@@ -6,3 +6,4 @@ folium
 rich
 webbrowser
 streamlit
+os

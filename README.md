@@ -46,7 +46,7 @@ pip install -r requirements.txt
 
 
 
-* En la línea 16 del archivo datos.py se encuentra la ubicación del archivo csv, si el programa se corre desde Windows se debe corroborar que esta escrita con "\\", en cambio, en Mac debería tener "/"
+* En la línea 16 del archivo datos.py se encuentra la ubicación del archivo csv, si el programa se corre desde Windows se debe corroborar que esta escrita con "\ \", en cambio, en Mac debería tener "/"
 
 
 

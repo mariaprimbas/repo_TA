@@ -14,13 +14,17 @@ Integrantes:
 
 
 
-#### Descripción
+#### Descripción del proyecto
 
 
 
+El proyecto consiste en un sistema de análisis y perfilado de clientes a partir de un dataset comportamiento de compra. La fuente del dataset utilizado es Kaggle.com. 
 
 
-El proyecto consiste en un sistema de análisis y perfilado de clientes a partir de un dataset comportamiento de compra. La fuente del dataset utilizado es Kaggle.com. El programa permitirá obtener estadísticas generales, comparar segmentos de clientes, visualizar información mediante gráficos, clasificar clientes según diferentes perfiles de consumo y la generación de recomendaciones de marketing a partir de una IA.
+
+El programa permitirá obtener estadísticas generales, comparar segmentos de clientes, visualizar información mediante gráficos, clasificar clientes según diferentes perfiles de consumo y la generación de recomendaciones de marketing a partir de una IA.
+
+
 
 El sistema está orientado a empresas, analistas de marketing, responsables comerciales o investigadores interesados en comprender el comportamiento de compra de sus clientes. . A partir de este análisis, el sistema clasifica a los clientes según su perfil y genera recomendaciones que ayudan a diseñar estrategias de marketing, campañas de fidelización y ventas más efectivas.
 
@@ -38,7 +42,7 @@ Información más detallada sobre el diseño del Trabajo Aplicado se encuentra e
 
 
 
-* Instalar las dependencias del proyecto en la terminal:
+* Instalar las librerías necesarias ejecutando en la terminal: 
 
 
 
@@ -46,13 +50,26 @@ pip install -r requirements.txt
 
 
 
-
-
 * En la línea 16 del archivo datos.py se encuentra la ubicación del archivo csv, si el programa se corre desde Windows se debe corroborar que esta escrita con "\\ ", en cambio, en Mac debería tener "/"
 
 
 
+*Si ocurre algún **error** al ejecutar "pip install -r requirements.txt" asegurarse de*:
 
+* Tener Python instalado correctamente (versión 3.10 o superior)
+* Ejecutar el comando desde la carpeta correcta del proyecto
+* Tener pip actualizado
+
+
+
+*Si ocurre algún **error** al correr el programa en Spyder después de instalar las librerías:*
+
+* Verificar que esté usando el mismo intérprete de Python donde se instalaron las librerías. En Spyder:
+
+  * Ir a Tools --> Preferences --> Python Interpreter
+  * Seleccionar "Use the following Python interpreter"
+  * Elegir el Python instalado 
+  * Reiniciar Spyder
 
 
 
@@ -94,8 +111,13 @@ El archivo *requirements.txt* contiene las siguientes librerías:
 * folium
 * google-genai
 * rich
-* webbrowser
 * streamlit
+
+
+
+Los siguientes módulos forman parte de la biblioteca estándar de Python y no se incluyen en "requirements.txt":
+
+* webbrowser 
 * os
 
 

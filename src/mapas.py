@@ -79,7 +79,7 @@ def generar_mapa_regiones(df):
     ).add_to(mapa)
     
     #Guardar el mapa
-    mapa.save("mapa_clientes.html")
+    mapa.save("outputs/mapa_clientes.html")
     
     webbrowser.open("mapa_clientes.html")
 

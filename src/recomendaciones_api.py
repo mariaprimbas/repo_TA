@@ -1,7 +1,6 @@
 from google import genai
 
-API_KEY = "pegar appi" #se la mandamos aparte en la entrega del trabajo
-
+API_KEY = "PEGAR_API_KEY_ACA"
 client = genai.Client(api_key=API_KEY)
 
 def generar_recomendacion_api(cliente):
@@ -9,7 +8,7 @@ def generar_recomendacion_api(cliente):
 
     respuesta = client.models.generate_content(model="gemini-2.5-flash", contents=prompt)
 
-    return respuesta.text  #SUPER A CHEQUEAR 
+    return respuesta.text   
 
 
 

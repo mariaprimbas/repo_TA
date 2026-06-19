@@ -56,7 +56,7 @@ while True:
 
     elif opcion == 3:
 
-        print("Comparando segmentos...")
+        print("\nComparando segmentos...\n")
         analisis = segmentos(df)
             
         mostrar_dataframe(analisis.reset_index(),"\nComparación de segmentos")
@@ -70,7 +70,7 @@ while True:
 
         cliente= crear_cliente_id(df_valido, id_cliente)
 
-        print("Generando recomendaciones...")
+        print("\n\nGenerando recomendaciones...\n")
         reco = generar_recomendacion_api(cliente)
         print(reco)
         
@@ -85,8 +85,14 @@ while True:
         print("Programa finalizado.")
         break
     
+    
     continuar = input("\n¿Desea realizar otra operación? (s/n): ").lower()
 
-    if continuar != "s":
+    while continuar != "n" and continuar != "s":
+        print('Debe ingresar s o n.')
+        continuar = input("\n¿Desea realizar otra operación? (s/n): ").lower()
+        
+    if continuar == "n":
         print("Programa finalizado.")
         break
+        

@@ -84,7 +84,7 @@ def generar_mapa_regiones(df):
     webbrowser.open(os.path.abspath("outputs/mapa_clientes.html"))
 
 
-    print("Mapa generado correctamente.")
+    print("Mapa generado correctamente, puede encontrarlo en la carpeta outputs.")
     
     
     

@@ -25,12 +25,14 @@ def segmentos(df):
     print("3. Satisfacción promedio según fidelización")
     print("4. Compra promedio según uso de promociones")
     
-    while True: 
-        opcion = input("\nIngrese una opción: ").lower().strip()
+    while True:
+        opcion = input("\nIngrese una opción: ")
+    
         if opcion not in ['1', '2', '3', '4']:
-            raise ValueError("Opción de comparación inválida.")
-        else:
-            break
+            print("Opción inválida. Debe estar entre 1 y 4.")
+            continue
+    
+        break
 
     if opcion == '1':
 

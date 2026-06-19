@@ -55,11 +55,12 @@ while True:
         console.print(tabla)
 
     elif opcion == 3:
-
+        
         print("\nComparando segmentos...\n")
+    
         analisis = segmentos(df)
-            
         mostrar_dataframe(analisis.reset_index(),"\nComparación de segmentos")
+        
 
     elif opcion == 4:
 

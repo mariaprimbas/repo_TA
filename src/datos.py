@@ -54,7 +54,7 @@ def validar_dataset(df):
     for columna in columnas_necesarias:
         if columna not in df.columns:
             raise ValueError(f'Error: falta la columna {columna}')
-   # esto de aca abajo es muy a chequear, tal vez lo podemos poner en el docstring y ni validarlo     
+    
     columnas_numericas = ["id", "age", "income", "purchase_amount", "promotion_usage", "satisfaction_score"]
     
     for columna in columnas_numericas:

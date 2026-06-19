@@ -25,8 +25,7 @@ El proyecto consiste en un sistema de análisis y perfilado de clientes a partir
 El sistema está orientado a empresas, analistas de marketing, responsables comerciales o investigadores interesados en comprender el comportamiento de compra de sus clientes. . A partir de este análisis, el sistema clasifica a los clientes según su perfil y genera recomendaciones que ayudan a diseñar estrategias de marketing, campañas de fidelización y ventas más efectivas. 
 
  
-Informacion detallada sobre el diseño del Trabajo Aplicado se encuentra en el documento "diseño" en la carpeta "docs". 
-Los diagramas del diseño del trabajo se encuentran en la carpeta "diagramas". 
+Información más detallada sobre el diseño del Trabajo Aplicado se encuentra en el documento "diseño" en la carpeta "docs". En la misma carpeta se encuentran los diagramas de flujo del diseño del trabajo. 
 
 
 

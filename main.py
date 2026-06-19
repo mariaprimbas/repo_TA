@@ -32,7 +32,7 @@ while True:
 
         cliente= crear_cliente_id(df_valido, id_cliente)
 
-        print("\nPerfil del cliente:")
+        print("\nPerfil del cliente:\n")
         print(cliente.mostrar_resultado())
 
     elif opcion == 2:

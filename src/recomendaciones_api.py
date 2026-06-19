@@ -1,6 +1,6 @@
 from google import genai
 
-API_KEY = "PEGAR_API_KEY_ACA"
+API_KEY = "PEGAR_LA_API_KEY_ACA"
 client = genai.Client(api_key=API_KEY)
 
 def generar_recomendacion_api(cliente):
